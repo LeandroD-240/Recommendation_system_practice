@@ -198,3 +198,8 @@ function renderRecs(recs, isFallback) {
 }
 
 loadRecs();
+
+// CHECKOUT
+document.getElementById("checkout-alert").addEventListener("click", function() {
+  alert("Thanks for try!")
+});
