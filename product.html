@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wren & Co. — Product</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-brand" href="index.html">Wren <em style="font-style:italic;color:#A188A6">&</em> Co.</a>
+  <div class="nav-links">
+    <a href="index.html">Shop</a>
+    <a href="#">Collections</a>
+    <a href="#">About</a>
+  </div>
+  <div class="nav-right">
+    <a class="nav-back" href="index.html">← All products</a>
+    <button class="nav-cart" id="nav-cart-btn" title="Cart">🛍</button>
+  </div>
+</nav>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<div class="page">
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Shop</a>
+    <span>›</span>
+    <span id="bc-cat">—</span>
+    <span>›</span>
+    <span id="bc-name">—</span>
+  </div>
+
+  <!-- PRODUCT SECTION -->
+  <section class="product-section">
+
+    <!-- LEFT: Image -->
+    <div class="img-panel fade-up">
+      <div class="img-frame">
+        <span class="img-initial" id="img-initial">W</span>
+        <div class="cat-badge">
+          <span class="cat-dot-badge" id="cat-dot-badge"></span>
+          <span id="cat-badge-label">Category</span>
+        </div>
+        <span class="img-sku" id="img-sku">SKU —</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: Info -->
+    <div class="info-panel">
+      <div class="fade-up delay-1">
+        <div class="info-cat" id="info-cat">Category</div>
+        <h1 class="info-title" id="info-title">Product Name</h1>
+      </div>
+
+      <div class="info-price fade-up delay-2" id="info-price">£0.00</div>
+
+      <div class="info-divider fade-up delay-2"></div>
+
+      <!-- Qty + buttons -->
+      <div class="qty-row fade-up delay-3">
+        <div class="qty-control">
+          <button class="qty-btn" onclick="changeQty(-1)">−</button>
+          <div class="qty-num" id="qty-display">1</div>
+          <button class="qty-btn" onclick="changeQty(1)">+</button>
+        </div>
+        <button class="btn-add" onclick="addToBasket()">
+          <span>Add to basket</span>
+          <span>→</span>
+        </button>
+        <button class="btn-remove" onclick="removeFromBasket()">Remove</button>
+      </div>
+
+      <!-- Details -->
+      <div class="details-block fade-up delay-4">
+        <div class="details-label">Product details</div>
+        <div class="detail-row">
+          <span class="detail-key">SKU</span>
+          <span class="detail-val" id="detail-sku">—</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Category</span>
+          <span class="detail-val" id="detail-cat">—</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Unit price</span>
+          <span class="detail-val" id="detail-price">—</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Availability</span>
+          <span class="detail-val" style="color:#2E7D32">In stock</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-key">Dispatch</span>
+          <span class="detail-val">2–3 working days</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RECOMMENDATIONS -->
+  <section class="recs-section" id="recs-section">
+    <div class="recs-header">
+      <div>
+        <h2 class="recs-title">Customers also bought</h2>
+        <div class="recs-sub">Recommended for you</div>
+      </div>
+      <span class="recs-source" id="recs-source-tag">Loading…</span>
+    </div>
+    <div class="recs-grid" id="recs-grid">
+      <!-- skeletons while loading -->
+      <div class="rec-skeleton"><div class="skel-img"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
+      <div class="rec-skeleton"><div class="skel-img"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
+      <div class="rec-skeleton"><div class="skel-img"></div><div class="skel-body"><div class="skel-line"></div><div class="skel-line short"></div></div></div>
+    </div>
+  </section>
+
+<div class="scroll-hint">
+  Scroll
+  <div class="scroll-line"></div>
+</div>
+
+<section class="catalogue" id="catalogue">
+  <div class="catalogue-header">
+    <h2 class="catalogue-title">All Products</h2>
+    <span class="catalogue-count" id="count-label">80 items</span>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2024 Wren &amp; Co.</span>
+    <span>Powered by intelligent recommendations</span>
+  </footer>
+
+</div><!-- /page -->
+
+<!-- BASKET SIDEBAR (fixed, lives outside .page) -->
+<aside class="basket-sidebar">
+    <div class="basket-header">
+      <span class="basket-title">Your basket</span>
+      <span class="basket-count" id="basket-count">0 items</span>
+    </div>
+
+    <div class="basket-empty" id="basket-empty">
+      <div class="basket-empty-icon">🧺</div>
+      <div class="basket-empty-text">Your basket is<br>waiting to be filled</div>
+    </div>
+
+    <div class="basket-items" id="basket-items" style="display:none"></div>
+
+    <div class="basket-footer" id="basket-footer" style="display:none">
+      <div class="shipping-bar-wrap">
+        <div class="shipping-bar-label" id="shipping-label">Add £50.00 more for free shipping</div>
+        <div class="shipping-bar-track">
+          <div class="shipping-bar-fill" id="shipping-fill" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="basket-subtotal">
+        <span class="basket-subtotal-label">Subtotal</span>
+        <span class="basket-subtotal-val" id="basket-total">£0.00</span>
+      </div>
+      <div class="basket-tax">VAT included · Free shipping over £50</div>
+      <button class="btn-checkout" id="checkout-alert">Proceed to checkout →</button>
+    </div>
+  </aside>
+
+<script src="js/script_2.js"></script>
+</body>
+</html>

@@ -1,6 +1,0 @@
-db/retail.db
-models/model.pkl
-models/*.csv
-data/*.csv
-__pycache__/
-.pytest_cache/

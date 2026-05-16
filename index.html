@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wren & Co. — Curated Home Goods</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#">Wren <em style="font-style:italic;color:#A188A6">&</em> Co.</a>
+  <div class="nav-links">
+    <a href="#catalogue">Shop</a>
+    <a href="#">Collections</a>
+    <a href="#">About</a>
+  </div>
+  <button class="nav-cart" title="Cart">🛍</button>
+</nav>
+
+<section class="hero">
+  <div class="ring ring-1"></div>
+  <div class="ring ring-2"></div>
+  <div class="ring ring-3"></div>
+
+  <div class="logo-wrap">
+    <svg viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="44" cy="44" r="42" stroke="#01386A" stroke-width="1"/>
+      <circle cx="44" cy="44" r="30" stroke="#A188A6" stroke-width=".5"/>
+      <path d="M27 53 Q35 29 44 34 Q53 39 59 27 Q57 45 44 47 Q37 48 35 57 Z"
+            fill="#01386A" opacity=".9"/>
+      <circle cx="57" cy="25" r="3.5" fill="#A188A6"/>
+      <path d="M35 57 Q42 62 51 55" stroke="#BEEF9E" stroke-width="1.5"
+            stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+
+  <h1 class="hero-title">Wren <em>&</em> Co.</h1>
+  <p class="hero-sub">Curated home &amp; lifestyle goods</p>
+  <div class="hero-divider"></div>
+
+  <a class="hero-cta" href="#catalogue">
+    Browse the collection
+    <span class="cta-arrow">↓</span>
+  </a>
+
+  <div class="scroll-hint">
+    Scroll
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<section class="catalogue" id="catalogue">
+  <div class="catalogue-header">
+    <h2 class="catalogue-title">All Products</h2>
+    <span class="catalogue-count" id="count-label">80 items</span>
+  </div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<footer>
+  <span>© 2024 Wren &amp; Co.</span>
+  <span>Powered by intelligent recommendations</span>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
