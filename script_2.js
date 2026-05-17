@@ -158,6 +158,7 @@ function addToBasket() {
   document.getElementById('qty-display').textContent = 1;
   renderBasket();
   showToast(`${toTitle(product.name)} added to basket`);
+  loadRecs();
 }
 
 function removeFromBasket() {
@@ -229,7 +230,9 @@ async function loadRecs() {
     const resp = await fetch(API, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customer_id: CUSTOMER_ID, product_clicked: product.name })
+      body: JSON.stringify({ 
+        basket_items: Object.values(basket).map(item => item.product.name)
+      })
     });
     if (!resp.ok) throw new Error('API error');
     const data = await resp.json();
