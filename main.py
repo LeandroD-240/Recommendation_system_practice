@@ -13,7 +13,7 @@ import pickle
 import sqlite3
 
 # Creating the API
-app = FastAPI(title="Wren & Co recommender")
+app = FastAPI()
 
 # Static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
