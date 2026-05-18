@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: recommender-api
+    env: my_env
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --reload
