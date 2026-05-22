@@ -90,7 +90,7 @@ All phases of CRISP-DM are complete and documented:
 
 The frontend can be opened directly in any modern browser — no installation required.
 
-Here is the page
+[Here is the page](https://recommendation-system-practice.onrender.com/)
 
 ---
 
