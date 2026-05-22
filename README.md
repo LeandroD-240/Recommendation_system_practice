@@ -78,9 +78,9 @@ All phases of CRISP-DM are complete and documented:
 - Fully responsive, no framework dependencies, zero build step
 
 **Business documentation**
-- One-page [executive summary]()
-- CRISP-DM [notebook]() with EDA and modeling
-- [Presentation]() of the project
+- One-page [executive summary](https://drive.google.com/file/d/1bIEsXgcxg1NtO4NeW8RGAH4REwI4xMTs/view?usp=sharing)
+- CRISP-DM [`notebook`](notebooks/Recommendation_system.ipynb) with EDA and modeling
+- [Presentation](https://canva.link/2vdwr7ek834tw1q) of the project
 
 ---
 
@@ -125,21 +125,23 @@ The API documentation is available at `http://127.0.0.1:8000/docs` once the serv
 ```
 ├── Recommendation_system_practice/
 │   └── data/
-|       ├── retail.db             # Dataset
-|       ├── frequent_items.pkl    # Frequent items
-|       └── asso_rules.pkl        # Association rules
+|       ├── retail.db                      # Dataset
+|       ├── frequent_items.pkl             # Frequent items
+|       └── asso_rules.pkl                 # Association rules
+│   └── notebooks/
+|       └── Recommendation_system.ipynb    # Notebook with the experimentation and charts made
 │   └── static/
-|       ├── img/                  # Images of the products
-|       ├── styles.css            # Stylish of the page and project
-|       ├── script.js             # JS for the dinamics of the home page
-|       └── script_2.js           # JS for the dinamics of the products page
+|       ├── img/                           # Images of the products
+|       ├── styles.css                     # Stylish of the page and project
+|       ├── script.js                      # JS for the dinamics of the home page
+|       └── script_2.js                    # JS for the dinamics of the products page
 │   └── templates/
-|       ├── index.html            # Home page file
-|       └── product.html          # Products page file
-|   ├── main.py                   # Python file with API requests and loading association rules
-|   ├── README.md                 # This file
-|   ├── render.yaml               # Render for upload the page
-|   ├── requirements.txt          # Packages for pip
+|       ├── index.html                     # Home page file
+|       └── product.html                   # Products page file
+|   ├── main.py                            # Python file with API requests and loading association rules
+|   ├── README.md                          # This file
+|   ├── render.yaml                        # Render for upload the page
+│   └── requirements.txt                   # Packages for pip
 ```
 
 #### Dockerfile
